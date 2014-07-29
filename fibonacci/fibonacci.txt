@@ -126,7 +126,7 @@ def fib(n):
 Good algorithm? Even Better
 -- All nodes are ONLY computed once
 -- Linear cost in time (memorized)
--- Constant space cost of memorization (last two calculations are saved)
+-- Constant space cost of memorization (last two calculations needs saving)
 -- No recursion cost (time + space)
 
 
