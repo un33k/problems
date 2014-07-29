@@ -1,7 +1,7 @@
 import cProfile
 
 memorized = {}
-def fib(n):
+def fibonacci(n):
     """
     Returns the next Fibonacci sequence for a given `n`.
     """
@@ -11,19 +11,22 @@ def fib(n):
     if n <= 2:
         f = 1
     else:
-        f = fib(n - 1) + fib(n - 2)
+        f = fibonacci(n - 1) + fibonacci(n - 2)
 
     memorized[n] = f
     return f
 
 
-def main():
+def run_test():
+    """
+    Test function.
+    """
     for n in range(30):
-        print fib(n)
+        print fibonacci(n)
 
 
 if __name__ == "__main__":
     """
     Run the code and profile it.
     """
-    cProfile.run('main()')
+    cProfile.run('run_test()')
