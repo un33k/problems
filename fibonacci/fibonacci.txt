@@ -1,0 +1,104 @@
+http://en.wikipedia.org/wiki/Fibonacci_number
+
+Fibonacci Number or Fibonacci Sequence:
+
+F1 = F2 = 1
+Fn = Fn-1 + Fn-2
+
+Compute Fn
+
+====================================
+====================================
+====================================
+
+1. Naive Recursive Algorithm (Exponential cost)
+
+T(n) = T(n-1) + T(n-2) + θ(1)
+
+Where θ(1) = Constant time (loading, returning, addition, ... etc.)
+
+def fib(n):
+    """
+    Returns the next Fibonacci sequence for a given `n`.
+    """
+    if n <= 1:
+        f = n
+    else:
+        f = fib(n - 1) + fib(n - 2)
+    return f
+
+Smart algorithm? Nope
+ -- Many nodes are computed over again
+ -- Exponential cost in time (non-memorized)
+
+                  Fn
+                  /\
+                 /  \
+              Fn-1   \
+              / \     \
+           Fn-2 Fn-3  Fn-2
+                       /\
+                      /  \
+                    Fn-3 Fn-4
+
+Note: Fn-x nodes are all recalculated when x > 1. Very expensive.
+
+File: naive_recursive_algorithm.py
+run:  python recursive_algorithm_naive.py
+
+====================================
+====================================
+====================================
+
+
+2. Memorized Recursive Algorithm (Linear cost)
+
+T(n) = F(1), F(2), ... F(n)
+T(n) = θ(n) # constant time to calculate each node
+
+
+memorized = {}
+def fib(n):
+    """
+    Returns the next Fibonacci sequence for a given `n`.
+    """
+    if n in memorized:
+        return memorized[n]
+
+    if n <= 1:
+        f = n
+    else:
+        f = fib(n - 1) + fib(n - 2)
+
+    memorized[n] = f
+    return f
+
+
+Good algorithm? Better
+-- All nodes are ONLY computed once
+-- Leaner cost in time (memorized)
+
+                  Fn
+                  /\
+                 /  \
+              Fn-1   \
+              / \     \
+           Fn-2 Fn-3  Fn-2    # load from memory @ θ(1)
+                       /\
+                      /  \
+                    Fn-3 Fn-4 # load from memory @ θ(1)
+
+Note: Fn nodes are all calculated only once and read from memory thereafter.
+
+File: recursive_algorithm_memorization.py
+run:  python recursive_algorithm_memorization.py
+
+====================================
+====================================
+====================================
+
+
+
+
+
+
