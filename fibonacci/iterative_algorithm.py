@@ -5,20 +5,17 @@ def fib(n):
     """
     Returns the next Fibonacci sequence for a given `n`.
     """
-    if n in memorized:
-        return memorized[n]
-
-    if n <= 2:
-        f = 1
-    else:
-        f = fib(n - 1) + fib(n - 2)
-
-    memorized[n] = f
-    return f
+    for k in range(1, n+1):
+        if k <= 2:
+            f = 1
+        else:
+            f = memorized[k - 1] + memorized[k - 2]
+        memorized[k] = f
+    return memorized[n]
 
 
 def main():
-    for n in range(30):
+    for n in range(1, 30):
         print fib(n)
 
 

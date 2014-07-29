@@ -30,6 +30,8 @@ def fib(n):
 Smart algorithm? Nope
  -- Many nodes are computed over again
  -- Exponential cost in time (non-memorized)
+ -- No direct space cost as it's non-memorized
+ -- Has recursion cost (time + space)
 
                   Fn
                   /\
@@ -76,7 +78,10 @@ def fib(n):
 
 Good algorithm? Better
 -- All nodes are ONLY computed once
--- Leaner cost in time (memorized)
+-- Linear cost in time (memorized)
+-- Linear space cost  of memorization
+-- Nodes are calculated once and remembered.
+-- Has recursion cost (time + space)
 
                   Fn
                   /\
@@ -88,7 +93,6 @@ Good algorithm? Better
                       /  \
                     Fn-3 Fn-4 # load from memory @ θ(1)
 
-Note: Fn nodes are all calculated only once and read from memory thereafter.
 
 File: recursive_algorithm_memorization.py
 run:  python recursive_algorithm_memorization.py
@@ -97,6 +101,48 @@ run:  python recursive_algorithm_memorization.py
 ====================================
 ====================================
 
+
+3. Memorized Iterative Algorithm (Linear cost)
+
+T(n) = ... F(n-3) -> F(n-2) -> F(n-1) -> F(n)
+Subproblem dependency - Bottom up Dynamic Programming Algorithm
+Saves space (memorization) as we only need the last two values since
+we are moving bottom up.
+
+memorized = {}
+def fib(n):
+    """
+    Returns the next Fibonacci sequence for a given `n`.
+    """
+    for k in range(1, n+1):
+        if k <= 2:
+            f = 1
+        else:
+            f = memorized[k - 1] + memorized[k - 2]
+        memorized[k] = f
+    return memorized[n]
+
+
+Good algorithm? Even Better
+-- All nodes are ONLY computed once
+-- Linear cost in time (memorized)
+-- Constant space cost of memorization (last two calculations are saved)
+-- No recursion cost (time + space)
+
+
+  bottom-up       Fn
+    ^^^           /\
+     |           /  \
+     |        Fn-1   \
+     |        / \     \
+     |    Fn-2 Fn-3  Fn-2
+                       /\
+                      /  \
+                    Fn-3 Fn-4
+
+
+File: iterative_algorithm.py.py
+run:  python iterative_algorithm.py.py
 
 
 
