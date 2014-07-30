@@ -45,7 +45,7 @@ Smart algorithm? Nope
 
 Note: Fn-x nodes are all recalculated when x > 1. Very expensive.
 
-File: naive_recursive_algorithm.py
+File: recursive_algorithm_naive.py
 run:  python recursive_algorithm_naive.py
 
 ====================================
@@ -141,8 +141,8 @@ Good algorithm? Even Better
                     Fn-3 Fn-4
 
 
-File: iterative_algorithm.py.py
-run:  python iterative_algorithm.py.py
+File: iterative_algorithm.py
+run:  python iterative_algorithm.py
 
 
 
