@@ -34,7 +34,6 @@ def numberOfPaths(nXm_matrix):
             last_value = calculate(matrix, matrix_h, matrix_w,
               next_h + 1, next_w, last_value)
 
-        # Final Result
         return last_value
 
     count = calculate(nXm_matrix, hight-1, width-1, 0, 0)
