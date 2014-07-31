@@ -16,6 +16,8 @@ def maxSumPaths(nXm_matrix):
         Local calculation recursive function.
         """
         last_value += matrix[next_h][next_w]
+
+        # Stop condition 1
         if next_h == matrix_h  and next_w == matrix_w:
             return last_value
 
