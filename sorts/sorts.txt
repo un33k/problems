@@ -1,0 +1,19 @@
+Insertion Sort:
+------------------------------------
+- Properties
+    Stable
+    O(1) extra space
+    O(n^2) comparisons and swaps
+    Adaptive
+        - O(n) time when nearly sorted
+    Very low overhead
+
+Heap Sort:
+------------------------------------
+- Properties
+    O(1) extra space
+    O(n * lg(n)) time
+    Not stable
+        - original ordering is lost during the heap creation, which comes first
+    Not really adaptive
+        - doesn't takes advantage of existing order in its input

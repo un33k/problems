@@ -1,8 +1,8 @@
 """
 Properties
-    O(1) extra space (see discussion)
+    O(1) extra space
     O(n lg(n)) time
-    Not stable: (original ordering is lost during the heap creation, that comes first)
+    Not stable: (original ordering is lost during the heap creation, which comes first)
     Not really adaptive: (doesn't takes advantage of existing order in its input)
 """
 
