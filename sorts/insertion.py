@@ -64,7 +64,7 @@ def insertion_sort_descending(dList):
     return dList
 
 
-def run_test_scending():
+def run_test_ascending():
     """
     Test function.
     """
@@ -88,5 +88,5 @@ if __name__ == "__main__":
     """
     Run the code and profile it.
     """
-    cProfile.run('run_test_scending()')
+    cProfile.run('run_test_ascending()')
     cProfile.run('run_test_escending()')
