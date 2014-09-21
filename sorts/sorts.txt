@@ -17,3 +17,12 @@ Heap Sort:
         - original ordering is lost during the heap creation, which comes first
     Not really adaptive
         - doesn't takes advantage of existing order in its input
+
+Quick Sort:
+------------------------------------
+- Properties
+    Not stable
+    O(lg(n)) extra space
+    O(n^2) time
+        - typically O(n * lg(n)) time
+    Not adaptive
