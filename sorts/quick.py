@@ -2,7 +2,7 @@
 Properties
     Not stable
     O(lg(n)) extra space
-    O(n^2) time
+    O(n^2) time worst case
         - typically O(n * lg(n)) time
     Not adaptive
     Great for large inputs
